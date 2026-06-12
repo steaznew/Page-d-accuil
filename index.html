@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panneau LED Maroc — Devis Gratuit en 5 Min | AZ New</title>
+<meta name="description" content="Panneaux LED sur mesure à Casablanca. Livraison partout au Maroc. Devis gratuit en 5 minutes sur WhatsApp.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0000;
+  --card:#1c0000;
+  --card2:#240000;
+  --border:#3a0000;
+  --red:#C8102E;
+  --rdim:rgba(200,16,46,0.12);
+  --gold:#f5c842;
+  --green:#25D366;
+  --white:#fff;
+  --off:#d4a0a0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);min-height:100vh}
+
+/* ====== BARRE URGENCE TOP ====== */
+.urgency-bar{
+  background:var(--red);
+  text-align:center;
+  padding:10px 16px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.3px;
+  position:sticky;top:0;z-index:200;
+}
+.urgency-bar span{opacity:.85;font-weight:400;margin-left:6px}
+
+/* ====== NAV ====== */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;
+  background:rgba(13,0,0,0.97);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:40px;z-index:100;
+}
+.nlogo{display:flex;align-items:center;gap:9px}
+.nlogo img{width:34px;height:34px;border-radius:8px}
+.nlogo b{font-size:17px;font-weight:900}
+.nav-wa{
+  display:flex;align-items:center;gap:8px;
+  background:var(--green);color:#fff;
+  padding:9px 18px;border-radius:50px;
+  text-decoration:none;font-size:13px;font-weight:800;
+  box-shadow:0 4px 18px rgba(37,211,102,.35);
+}
+.nav-wa .dot{width:8px;height:8px;background:#fff;border-radius:50%;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+
+/* ====== HERO ====== */
+.hero{
+  padding:60px 20px 50px;
+  text-align:center;
+  background:radial-gradient(ellipse at 50% 0%, rgba(200,16,46,0.18) 0%, transparent 65%);
+}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--rdim);border:1px solid rgba(200,16,46,.4);
+  color:var(--red);padding:5px 14px;border-radius:50px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:18px;
+}
+.hero h1{font-size:clamp(28px,6.5vw,52px);font-weight:900;line-height:1.1;margin-bottom:14px}
+.hero h1 .hl{color:var(--red)}
+.hero p{font-size:15px;color:var(--off);max-width:440px;margin:0 auto 32px;line-height:1.6}
+
+/* CTA principal */
+.cta-main{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green);color:#fff;
+  padding:16px 30px;border-radius:14px;
+  text-decoration:none;font-size:17px;font-weight:900;
+  box-shadow:0 6px 28px rgba(37,211,102,.4);
+  transition:transform .15s,box-shadow .15s;
+  margin-bottom:10px;
+}
+.cta-main:active{transform:scale(.97)}
+.cta-main svg{width:22px;height:22px;fill:#fff}
+.cta-sub{font-size:11px;color:var(--off);margin-bottom:36px}
+
+/* PREUVES SOCIALES */
+.proofs{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:0}
+.proof{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--off)}
+.proof-dot{width:6px;height:6px;background:var(--green);border-radius:50%}
+
+/* ====== PROBLEME → SOLUTION ====== */
+.ps-wrap{padding:50px 20px;max-width:800px;margin:0 auto}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;text-align:center}
+.sec-title{font-size:clamp(22px,4.5vw,34px);font-weight:900;text-align:center;margin-bottom:36px}
+
+.pros-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pro-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:20px 18px;
+  border-top:3px solid var(--red);
+}
+.pro-icon{font-size:28px;margin-bottom:10px}
+.pro-card h3{font-size:14px;font-weight:800;margin-bottom:6px}
+.pro-card p{font-size:12px;color:var(--off);line-height:1.55}
+
+/* ====== CHIFFRES ====== */
+.stats-wrap{
+  background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:36px 20px;
+}
+.stats{display:flex;justify-content:center;gap:0;flex-wrap:wrap;max-width:600px;margin:0 auto}
+.stat{flex:1;min-width:120px;text-align:center;padding:16px 10px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:34px;font-weight:900;color:var(--red)}
+.stat-l{font-size:11px;color:var(--off);margin-top:4px;line-height:1.4}
+
+/* ====== COMMENT ÇA MARCHE ====== */
+.how-wrap{padding:50px 20px;max-width:600px;margin:0 auto}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
+.step:last-child{border-bottom:none}
+.step-num{
+  width:40px;height:40px;min-width:40px;
+  background:var(--red);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;font-weight:900;
+}
+.step-body h4{font-size:14px;font-weight:800;margin-bottom:4px}
+.step-body p{font-size:12px;color:var(--off);line-height:1.5}
+
+/* ====== AVIS ====== */
+.avis-wrap{padding:50px 20px;max-width:800px;margin:0 auto}
+.avis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:36px}
+.avis-card{
+  background:var(--card2);border:1px solid var(--border);border-radius:14px;
+  padding:18px 16px;
+}
+.stars{color:var(--gold);font-size:14px;margin-bottom:8px}
+.avis-card p{font-size:12px;color:var(--off);line-height:1.6;margin-bottom:12px}
+.avis-card .av-name{font-size:12px;font-weight:700;color:var(--white)}
+.avis-card .av-city{font-size:11px;color:var(--off)}
+
+/* ====== FORMULAIRE RAPIDE ====== */
+.form-wrap{
+  background:var(--card);border-top:2px solid var(--red);
+  padding:50px 20px;
+}
+.form-inner{max-width:480px;margin:0 auto}
+.notice{
+  background:var(--rdim);border:1px solid rgba(200,16,46,.3);
+  border-radius:10px;padding:12px 14px;font-size:12px;color:var(--off);
+  margin-bottom:20px;line-height:1.6;
+}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:11px;font-weight:700;color:var(--off);margin-bottom:5px;letter-spacing:.5px;text-transform:uppercase}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:#1c0000;border:1px solid var(--border);
+  border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;
+  font-family:inherit;outline:none;transition:border .2s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red)}
+.fg textarea{resize:vertical;min-height:80px}
+.fg select option{background:#1c0000}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* CTA form */
+.cta-form{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--green);color:#fff;border:none;
+  border-radius:14px;padding:16px;font-size:16px;font-weight:900;
+  cursor:pointer;font-family:inherit;margin-top:6px;
+  box-shadow:0 6px 24px rgba(37,211,102,.35);
+  transition:transform .15s;
+}
+.cta-form:active{transform:scale(.97)}
+.cta-form svg{width:20px;height:20px;fill:#fff}
+.ok-box{
+  display:none;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);
+  border-radius:10px;padding:14px;text-align:center;
+  color:var(--green);font-weight:700;margin-top:12px;font-size:13px;
+}
+
+/* ====== CTA STICKY BAS ====== */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:300;
+  background:rgba(13,0,0,.97);border-top:1px solid var(--border);
+  padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.sticky-info b{font-size:13px;font-weight:800}
+.sticky-info span{display:block;font-size:11px;color:var(--off)}
+.sticky-wa{
+  display:flex;align-items:center;gap:8px;
+  background:var(--green);color:#fff;
+  padding:12px 22px;border-radius:50px;
+  text-decoration:none;font-size:14px;font-weight:900;
+  white-space:nowrap;
+  box-shadow:0 4px 18px rgba(37,211,102,.4);
+}
+.sticky-wa svg{width:18px;height:18px;fill:#fff}
+
+/* ====== FOOTER ====== */
+footer{
+  text-align:center;padding:30px 20px 90px;
+  color:var(--off);font-size:12px;border-top:1px solid var(--border);
+}
+footer strong{color:#fff}
+.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+.footer-links a{color:var(--off);text-decoration:none;font-size:12px}
+</style>
+</head>
+<body>
+
+<!-- BARRE URGENCE -->
+<div class="urgency-bar">
+  🔥 Offre spéciale : Fabricant direct · Prix usine · Livraison Maroc <span>— Places limitées !</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nlogo">
+    <img src="data:image/jpeg;base64,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" alt="AZ New">
+    <b>AZ NEW</b>
+  </div>
+  <a class="nav-wa" href="https://wa.me/212661538844?text=Bonjour%20AZ%20New%2C%20je%20veux%20un%20devis%20panneau%20LED">
+    <span class="dot"></span>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="badge">📍 Casablanca · Livraison Maroc</div>
+  <h1>Votre <span class="hl">Panneau LED</span><br>fabriqué sur mesure<br>livré partout au Maroc</h1>
+  <p>Fabricant de panneaux LED au Maroc. À partir de <strong style='color:#C8102E'>1 500 DH</strong>. Livraison nationale. Devis gratuit en 5 min.</p>
+
+  <a class="cta-main" href="https://wa.me/212661538844?text=Bonjour%20AZ%20New%2C%20je%20veux%20un%20devis%20panneau%20LED%20rapidement">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Devis gratuit sur WhatsApp
+  </a>
+  <div class="cta-sub">📲 Réponse en moins de 5 minutes · Gratuit · Sans engagement</div>
+
+  <div class="proofs">
+    <div class="proof"><div class="proof-dot"></div> +200 panneaux vendus</div>
+    <div class="proof"><div class="proof-dot"></div> Livraison nationale</div>
+    <div class="proof"><div class="proof-dot"></div> Garantie 2 ans</div>
+    <div class="proof"><div class="proof-dot"></div> Prix usine</div>
+  </div>
+</section>
+
+<!-- ====== AVANTAGES ====== -->
+<section class="ps-wrap">
+  <div class="sec-label">Pourquoi AZ New ?</div>
+  <h2 class="sec-title">Ce que vous obtenez</h2>
+  <div class="pros-grid">
+    <div class="pro-card">
+      <div class="pro-icon">🎯</div>
+      <h3>Sur mesure</h3>
+      <p>Chaque panneau est fabriqué selon vos dimensions exactes. Monochrome ou RGB, simple ou double face.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-icon">⚡</div>
+      <h3>Livraison nationale</h3>
+      <p>Livraison partout au Maroc (Rabat, Marrakech, Fès, Tanger...). Installation disponible à Casablanca.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-icon">💰</div>
+      <h3>À partir de 1 500 DH</h3>
+      <p>Prix usine direct, sans intermédiaire. Panneaux professionnels à partir de 1 500 DH selon dimensions.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-icon">🛡️</div>
+      <h3>Garantie 2 ans</h3>
+      <p>Tous nos panneaux sont garantis 2 ans. SAV réactif et pièces disponibles immédiatement.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-icon">📶</div>
+      <h3>WiFi intégré</h3>
+      <p>Changez votre message depuis votre téléphone n'importe où. Application gratuite incluse.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-icon">🏪</div>
+      <h3>Tous secteurs</h3>
+      <p>Commerce, restaurant, pharmacie, hôtel, coiffeur, épicerie, garage... Nous avons votre solution.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== STATS ====== -->
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-n">+200</div>
+      <div class="stat-l">Clients au Maroc</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">48h</div>
+      <div class="stat-l">Délai de livraison</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">2 ans</div>
+      <div class="stat-l">Garantie</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">5 min</div>
+      <div class="stat-l">Réponse WhatsApp</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== COMMENT ÇA MARCHE ====== -->
+<section class="how-wrap">
+  <div class="sec-label">Simple & rapide</div>
+  <h2 class="sec-title" style="margin-bottom:28px">Comment commander ?</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Envoyez-nous un message WhatsApp</h4>
+        <p>Indiquez vos dimensions, votre secteur et votre budget. Notre équipe répond en moins de 5 minutes.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Recevez votre devis gratuit</h4>
+        <p>Nous vous envoyons un devis détaillé avec dimensions, prix et délai. Aucun engagement.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Fabrication & livraison</h4>
+        <p>Une fois validé, votre panneau est fabriqué et livré chez vous sous 48h. Installation et fixation disponible à Casablanca..</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Utilisez votre panneau</h4>
+        <p>Changez vos messages depuis votre téléphone. Support technique disponible 7j/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== AVIS ====== -->
+<section class="avis-wrap">
+  <div class="sec-label">Témoignages</div>
+  <h2 class="sec-title">Ils nous font confiance</h2>
+  <div class="avis-grid">
+    <div class="avis-card">
+      <div class="stars">★★★★★</div>
+      <p>"Panneau installé en 2 jours, qualité impeccable. Les clients rentrent beaucoup plus depuis qu'on l'a mis dehors."</p>
+      <div class="av-name">Karim B.</div>
+      <div class="av-city">Restaurant — Casablanca</div>
+    </div>
+    <div class="avis-card">
+      <div class="stars">★★★★★</div>
+      <p>"Prix imbattable et service rapide. J'ai commandé deux fois et les deux fois parfait. Je recommande vivement."</p>
+      <div class="av-name">Fatima L.</div>
+      <div class="av-city">Pharmacie — Rabat</div>
+    </div>
+    <div class="avis-card">
+      <div class="stars">★★★★★</div>
+      <p>"Super équipe, très professionnels. Le panneau WiFi est génial, je change les messages depuis mon portable."</p>
+      <div class="av-name">Youssef M.</div>
+      <div class="av-city">Salon — Marrakech</div>
+    </div>
+  </div>
+
+  <!-- CTA milieu de page -->
+  <div style="text-align:center;margin-top:10px">
+    <a class="cta-main" href="https://wa.me/212661538844?text=Bonjour%20AZ%20New%2C%20j%27ai%20vu%20vos%20avis%20et%20je%20veux%20un%20devis%20panneau%20LED">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Je veux mon devis maintenant
+    </a>
+    <div class="cta-sub" style="margin-top:8px">📲 Gratuit · Réponse en 5 min · Sans engagement</div>
+  </div>
+</section>
+
+<!-- ====== FORMULAIRE ====== -->
+<section class="form-wrap" id="devis">
+  <div class="form-inner">
+    <div class="sec-label" style="text-align:center">Devis express</div>
+    <h2 class="sec-title" style="margin-bottom:20px">Remplissez en 1 minute</h2>
+    <div class="notice">
+      💬 Votre demande sera envoyée sur <strong>WhatsApp</strong>. Budget minimum : <strong style='color:#C8102E'>1 500 DH</strong>. Notre équipe répond en moins de 5 minutes.
+    </div>
+
+    <div class="row2">
+      <div class="fg">
+        <label>Nom *</label>
+        <input id="fn" type="text" placeholder="Votre nom">
+      </div>
+      <div class="fg">
+        <label>Téléphone *</label>
+        <input id="fp" type="tel" placeholder="06XXXXXXXX">
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="fg">
+        <label>Largeur (cm) *</label>
+        <input id="fw" type="number" placeholder="ex: 200">
+      </div>
+      <div class="fg">
+        <label>Hauteur (cm) *</label>
+        <input id="fh" type="number" placeholder="ex: 40">
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Budget approximatif</label>
+      <select id="fb">
+        <option value="">-- Choisir --</option>
+        <option value="m15">Moins de 1 500 DH</option>
+        <option value="1500">1 500 – 2 000 DH</option>
+        <option value="2k">2 000 – 5 000 DH</option>
+        <option value="5k+">Plus de 5 000 DH</option>
+      </select>
+      <div id="budget-warn" style="display:none;background:rgba(200,16,46,0.12);border:1px solid rgba(200,16,46,.4);border-radius:9px;padding:10px 13px;font-size:12px;color:#d4a0a0;margin-top:6px">
+        ⚠️ Notre budget minimum est de <strong style="color:#C8102E">1 500 DH</strong>. En dessous de ce montant, nous ne pouvons pas répondre aux commandes.
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="fg">
+        <label>Secteur</label>
+        <select id="fsect">
+          <option value="">-- Choisir --</option>
+          <option>Commerce</option>
+          <option>Restaurant / Café</option>
+          <option>Pharmacie</option>
+          <option>Hôtel</option>
+          <option>Coiffeur / Salon</option>
+          <option>Garage / Auto</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Type d'affichage</label>
+        <select id="fc">
+          <option value="">-- Choisir --</option>
+          <option value="mono">Monochrome</option>
+          <option value="rgb">Multicouleurs RGB</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Message (optionnel)</label>
+      <textarea id="fm" placeholder="Emplacement, délai souhaité, questions..."></textarea>
+    </div>
+
+    <button class="cta-form" onclick="envoyerWA()">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Envoyer ma demande sur WhatsApp
+    </button>
+    <div class="ok-box" id="okbox">✅ Redirection vers WhatsApp en cours...</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="https://lepanneau.ma">🌐 lepanneau.ma</a>
+    <a href="mailto:ste.aznew@gmail.com">📧 ste.aznew@gmail.com</a>
+    <a href="tel:+212661538844">📞 06 61 53 88 44</a>
+  </div>
+  <strong>AZ NEW</strong> — Panneaux LED Casablanca, Maroc · Tous droits réservés
+</footer>
+
+<!-- ====== BOUTON STICKY BAS ====== -->
+<div class="sticky-cta">
+  <div class="sticky-info">
+    <b>📲 Commandez en 5 min</b>
+    <span>Fabricant direct — Prix usine</span>
+  </div>
+  <a class="sticky-wa" href="https://wa.me/212661538844?text=Bonjour%20AZ%20New%2C%20je%20veux%20un%20devis%20panneau%20LED">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp maintenant
+  </a>
+</div>
+
+<script>
+function getLbl(id, val) {
+  var s = document.getElementById(id);
+  if (!s) return val;
+  for (var i = 0; i < s.options.length; i++)
+    if (s.options[i].value === val) return s.options[i].text;
+  return val;
+}
+
+document.getElementById('fb').addEventListener('change', function() {
+  var warn = document.getElementById('budget-warn');
+  warn.style.display = this.value === 'm15' ? 'block' : 'none';
+});
+
+function envoyerWA() {
+  var n = document.getElementById('fn').value.trim();
+  var p = document.getElementById('fp').value.trim();
+  var w = document.getElementById('fw').value.trim();
+  var h = document.getElementById('fh').value.trim();
+  var b = document.getElementById('fb').value;
+  var sect = document.getElementById('fsect').value;
+  var fc = document.getElementById('fc').value;
+  var m = document.getElementById('fm').value.trim();
+
+  var b = document.getElementById('fb').value;
+  if (b === 'm15') {
+    alert('⚠️ Notre budget minimum est de 1 500 DH. Nous ne pouvons pas traiter les demandes en dessous de ce montant.');
+    return;
+  }
+  if (!n || !p) { alert('Veuillez renseigner votre nom et téléphone.'); return; }
+  if (!w || !h) { alert('Veuillez indiquer les dimensions souhaitées.'); return; }
+
+  var msg = '🟢 Nouvelle demande de devis — AZ New\n';
+  msg += '━━━━━━━━━━━━━━━━\n';
+  msg += '👤 Nom : ' + n + '\n';
+  msg += '📞 Tél : ' + p + '\n';
+  msg += '📐 Dimensions : ' + w + ' × ' + h + ' cm\n';
+  if (b) msg += '💰 Budget : ' + getLbl('fb', b) + '\n';
+  if (sect) msg += '🏪 Secteur : ' + sect + '\n';
+  if (fc) msg += '🎨 Affichage : ' + getLbl('fc', fc) + '\n';
+  if (m) msg += '💬 Message : ' + m + '\n';
+  msg += '━━━━━━━━━━━━━━━━';
+
+  document.getElementById('okbox').style.display = 'block';
+  setTimeout(function () {
+    window.open('https://wa.me/212661538844?text=' + encodeURIComponent(msg), '_blank');
+  }, 600);
+}
+
+// Tracking Google Ads (à activer une fois votre tag configuré)
+function trackWA() {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXXX/XXXXXXXXX' });
+  }
+}
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(a) {
+  a.addEventListener('click', trackWA);
+});
+</script>
+</body>
+</html>
